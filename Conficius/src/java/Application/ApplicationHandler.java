@@ -28,7 +28,9 @@ public class ApplicationHandler extends HttpServlet {
     {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        
         // get parameters from the request
+        
         String fName = request.getParameter("fName");
         String lName = request.getParameter("lName");
         String regNo = request.getParameter("regNo");
@@ -56,5 +58,6 @@ public class ApplicationHandler extends HttpServlet {
             request.setAttribute("errMessage", applicationRegistered);
             request.getRequestDispatcher("/application.jsp").forward(request, response);
         }
+        
     }
 }

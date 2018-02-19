@@ -40,7 +40,7 @@ public class ApplicationDao
             int i = preparedStatement.executeUpdate();
             
             if (i!=0)
-                return "Sucess";
+                return "SUCCESS";
         }
         catch (SQLException e)
         {
