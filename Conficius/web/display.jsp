@@ -18,15 +18,15 @@
         <table cellspacing="5" cellpadding="5" border="1">
             <tr>
                 <td align="right">First Name:</td>
-                <td><jsp:getProperty name="user" property="fname"/></td>
+                <td><jsp:getProperty name="user" property="fName"/></td>
             </tr>
             <tr>
                 <td align="right">Last Name:</td>
-                <td><jsp:getProperty name="user" property="lname"/></td>
+                <td><jsp:getProperty name="user" property="lName"/></td>
             </tr>
             <tr>
                 <td align="right">Reg No:</td>
-                <td><jsp:getProperty name="user" property="regno"/></td>
+                <td><jsp:getProperty name="user" property="regNo"/></td>
             </tr>
             <tr>
                 <td align="right">Gender:</td>
@@ -37,5 +37,7 @@
                 <td><jsp:getProperty name="user" property="choice"/></td>
             </tr>
         </table>
+            <br>
+                use " <i> select * from student; </i> " in MySQL client to verify it.
     </body>
 </html>

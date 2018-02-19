@@ -16,6 +16,10 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
+import java.sql.*;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,40 +32,45 @@ public class ApplicationHandler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
         // get parameters from the request
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
-        String regno = request.getParameter("regno");
+        String fName = request.getParameter("fName");
+        String lName = request.getParameter("lName");
+        String regNo = request.getParameter("regNo");
         String gender = request.getParameter("gender");
         String choice = request.getParameter("choice");
-        
-        // Create the UserIO object
-        User user = new User();
-        user.setFname(fname);
-        user.setLname(lname);
-        user.setRegno(regno);
-        user.setGender(gender);
-        user.setChoice(choice);
-        
-        // write the UserIO object to a file
-        ServletContext sc = getServletContext();
-        String path = sc.getRealPath("/WEB-INF/application.txt");
-        Data.add(user, path);
-        
-        // store the UserIO object in the session
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
-        
-        // forward request and response to JSP page
-        String url = "/display.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+
+           // inserting data into mysql database 
+           // create a test database and student table before running this to create table
+           //create table application( 
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                // loads mysql driver
+                
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/applicationform", "root", "");
+                
+                String query = "insert into aapplication values(?, ?, ?, ?, ?)";
+                
+                PreparedStatement ps = con.prepareStatement(query); // generates sql query
+                
+                ps.setString(1, fName);
+                ps.setString(2, lName);
+                ps.setString(3, regNo);
+                ps.setString(4, gender);
+                ps.setString(5, choice);
+                
+                ps.executeUpdate();
+                System.out.println("Succesfully inserted");
+                ps.close();
+                con.close();
+            }
+            catch (ClassNotFoundException | SQLException ex) {
+                // TODO Auto-generated catch block
+                ex.printStackTrace();
+            }
+            
+            RequestDispatcher rd = request.getRequestDispatcher("display.jsp");
+            rd.forward(request, response);
+        }
     }
-    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException
-    {
-        this.doPost(request, response);
-    }
-}

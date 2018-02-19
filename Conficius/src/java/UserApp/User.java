@@ -9,44 +9,44 @@ import java.io.Serializable;
 
 public class User implements Serializable
 {
-    private String fname;
-    private String lname;
+    private String fName;
+    private String lName;
     private String choice;
     private String gender;
-    private String regno;
+    private String regNo;
     
     public User()
     {
-        fname = "";
-        lname = "";
+        fName = "";
+        lName = "";
         choice = "";
         gender = "";
-        regno = ""; 
+        regNo = ""; 
     }
     
     public User(String first, String last, String RegNo, String Gender, String Choice)
     {
-        fname = first;
-        lname = last;
-        regno = RegNo;
+        fName = first;
+        lName = last;
+        regNo = RegNo;
         gender = Gender;
         choice = Choice;
     }
 
     public String getFname() {
-        return fname;
+        return fName;
     }
 
     public void setFname(String fname) {
-        this.fname = fname;
+        this.fName = fname;
     }
 
     public String getLname() {
-        return lname;
+        return lName;
     }
 
     public void setLname(String lname) {
-        this.lname = lname;
+        this.lName = lname;
     }
 
     public String getChoice() {
@@ -66,11 +66,11 @@ public class User implements Serializable
     }
 
     public String getRegno() {
-        return regno;
+        return regNo;
     }
 
     public void setRegno(String regno) {
-        this.regno = regno;
+        this.regNo = regno;
     }
     
 }

@@ -17,13 +17,13 @@
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Name:
     <p><input placeholder="First name..." oninput="this.className = ''" name="fname"
-              value="<jsp:getProperty name="user" property="fname"/>"</p>
+              value="<jsp:getProperty name="user" property="fName"/>"</p>
     <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"
-              value="<jsp:getProperty name="user" property="lname"/>"</p>
+              value="<jsp:getProperty name="user" property="lName"/>"</p>
   </div>
   <div class="tab">Registration Number:
     <p><input placeholder="Reg No...." oninput="this.className = ''" name="regNo"
-              value="<jsp:getProperty name="user" property="regno"/>"></p>
+              value="<jsp:getProperty name="user" property="regNo"/>"></p>
   </div>
   <div class="tab">Gender:
     <p><input placeholder="Male/Female ... " oninput="this.className = ''" name="gender"
