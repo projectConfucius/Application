@@ -12,26 +12,25 @@
 <link href="form.css" rel="stylesheet">
 <body>
 <form id="regForm" action="ApplicationHandler" method="post">
-    <jsp:useBean id="user" scope="session" class="UserApp.User"/>
   <h1>Application Form:</h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Name:
-    <p><input placeholder="First name..." oninput="this.className = ''" name="fname"
-              value="<jsp:getProperty name="user" property="fName"/>"</p>
-    <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"
-              value="<jsp:getProperty name="user" property="lName"/>"</p>
+    <p><input placeholder="First name..." oninput="this.className = ''" name="fName"
+              </p>
+    <p><input placeholder="Last name..." oninput="this.className = ''" name="lName"
+              </p>
   </div>
   <div class="tab">Registration Number:
     <p><input placeholder="Reg No...." oninput="this.className = ''" name="regNo"
-              value="<jsp:getProperty name="user" property="regNo"/>"></p>
+              </p>
   </div>
   <div class="tab">Gender:
     <p><input placeholder="Male/Female ... " oninput="this.className = ''" name="gender"
-              value="<jsp:getProperty name="user" property="gender"/>"></p>
+              </p>
   </div>
   <div class="tab">Are you proficient in English:
     <p><input placeholder="Yes/No ... " oninput="this.className = ''" name="choice"
-              value="<jsp:getProperty name="user" property="choice"/>"></p>
+              </p>
   </div>
   <div style="overflow:auto;">
     <div style="float:right;">

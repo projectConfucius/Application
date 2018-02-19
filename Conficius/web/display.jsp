@@ -10,34 +10,48 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Display Data: </title>
-    </head>
-    <body>
         <h1>Thank you for joining our Application list</h1>
         <p>Here is the information you have entered</p>
-        <jsp:useBean id="user" scope="session" class="UserApp.User"/>
-        <table cellspacing="5" cellpadding="5" border="1">
-            <tr>
-                <td align="right">First Name:</td>
-                <td><jsp:getProperty name="user" property="fName"/></td>
-            </tr>
-            <tr>
-                <td align="right">Last Name:</td>
-                <td><jsp:getProperty name="user" property="lName"/></td>
-            </tr>
-            <tr>
-                <td align="right">Reg No:</td>
-                <td><jsp:getProperty name="user" property="regNo"/></td>
-            </tr>
-            <tr>
-                <td align="right">Gender:</td>
-                <td><jsp:getProperty name="user" property="gender"/></td>
-            </tr>
-            <tr>
-                <td align="right">Choice:</td>
-                <td><jsp:getProperty name="user" property="choice"/></td>
-            </tr>
-        </table>
-            <br>
-                use " <i> select * from student; </i> " in MySQL client to verify it.
+        <style>
+            table#nat{
+            width: 50%;
+            background-color: #c48ec5;
+            }
+        </style>
+    </head>
+<body>  
+<% 
+	String fName =  request.getParameter("fName");
+	String lName = request.getParameter("lName");
+	String regNo = request.getParameter("regNo");
+	String gender = request.getParameter("gender");
+	String choice = request.getParameter("choice"); 
+%>
+<table id ="nat">
+<tr>
+	<td>First Name</td>
+	<td><%= fName %></td>
+</tr>
+<tr>
+	<td>Last Name</td>
+	<td><%= lName %></td>
+</tr>
+<tr>
+	<td>Reg No.</td>
+	<td><%= regNo %></td>
+</tr>
+<tr>
+	<td>Gender</td>
+	<td><%= gender %></td>
+</tr>
+<tr>
+	<td>Choice</td>
+	<td><%= choice %></td>
+</tr>
+</table>
+<br>
+use " <i> select * from student; </i> " in mysql client to verify it.
+</body>
+</html>
     </body>
 </html>

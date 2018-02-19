@@ -16,6 +16,14 @@
         <servlet-name>Data</servlet-name>
         <servlet-class>DataIO.Data</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApplicationDao</servlet-name>
+        <servlet-class>Dao.ApplicationDao</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DBConnection</servlet-name>
+        <servlet-class>DB.DBConnection</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ApplicationHandler</servlet-name>
         <url-pattern>/ApplicationHandler</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>Data</servlet-name>
         <url-pattern>/Data</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationDao</servlet-name>
+        <url-pattern>/ApplicationDao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DBConnection</servlet-name>
+        <url-pattern>/DBConnection</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
