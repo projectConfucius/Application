@@ -37,7 +37,7 @@
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="#">Home</a>
                 <a class="nav-link" href="application.jsp">Application</a>
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="login.jsp">Login</a>
               </nav>
             </div>
           </div>

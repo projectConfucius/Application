@@ -24,6 +24,10 @@
         <servlet-name>DBConnection</servlet-name>
         <servlet-class>DB.DBConnection</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>Login.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ApplicationHandler</servlet-name>
         <url-pattern>/ApplicationHandler</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>DBConnection</servlet-name>
         <url-pattern>/DBConnection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -53,7 +53,7 @@ public class ApplicationHandler extends HttpServlet {
         {
             if(applicationRegistered.equals("SUCCESS"))
              {
-                request.getRequestDispatcher("/procifiency.jsp").forward(request, response);
+                request.getRequestDispatcher("/procificiency.jsp").forward(request, response);
              }
             else
             {
