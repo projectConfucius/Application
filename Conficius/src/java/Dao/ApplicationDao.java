@@ -33,9 +33,9 @@ public class ApplicationDao
             
             preparedStatement.setString(1, fName);
             preparedStatement.setString(2, lName);
-            preparedStatement.setString(3, regNo);
+            preparedStatement.setString(3, choice);
             preparedStatement.setString(4, gender);
-            preparedStatement.setString(5, choice);
+            preparedStatement.setString(5, regNo);
             
             int i = preparedStatement.executeUpdate();
             

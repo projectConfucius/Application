@@ -49,15 +49,21 @@ public class ApplicationHandler extends HttpServlet {
         
         String applicationRegistered = applicationRegister.registerApplication(user);
         
-        if(applicationRegistered.equals("SUCCESS"))
+        if (choice == "Yes")
         {
-            request.getRequestDispatcher("/dispaly.jsp").forward(request, response);
+            if(applicationRegistered.equals("SUCCESS"))
+             {
+                request.getRequestDispatcher("/procifiency.jsp").forward(request, response);
+             }
+            else
+            {
+                request.setAttribute("errMessage", applicationRegistered);
+                request.getRequestDispatcher("/application.jsp").forward(request, response);
+            }
         }
-        else
-        {
-            request.setAttribute("errMessage", applicationRegistered);
-            request.getRequestDispatcher("/application.jsp").forward(request, response);
+        else 
+             {
+                request.getRequestDispatcher("/goodbye.jsp").forward(request, response);
+             }
         }
-        
-    }
 }
