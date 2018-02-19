@@ -36,7 +36,7 @@
               <h3 class="masthead-brand">Confucious Institute</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="conficius/application.jsp">Application</a>
+                <a class="nav-link" href="application.jsp">Application</a>
                 <a class="nav-link" href="#">Login</a>
               </nav>
             </div>

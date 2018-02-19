@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Daniel
  */
-@WebServlet(name="applicationHandler", urlPatterns = {"/Conficius"})
+@WebServlet(name="ApplicationHandler", urlPatterns = {"/Conficius"})
 public class ApplicationHandler extends HttpServlet {
     
     @Override
@@ -53,7 +53,7 @@ public class ApplicationHandler extends HttpServlet {
         session.setAttribute("user", user);
         
         // forward request and response to JSP page
-        String url = "display.jsp";
+        String url = "/display.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }

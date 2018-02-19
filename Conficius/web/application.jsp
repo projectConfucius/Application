@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="form.css" rel="stylesheet">
 <body>
-<form id="regForm" action="applicationHandler" method="post">
+<form id="regForm" action="ApplicationHandler" method="post">
     <jsp:useBean id="user" scope="session" class="UserApp.User"/>
   <h1>Application Form:</h1>
   <!-- One "tab" for each step in the form: -->
