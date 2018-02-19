@@ -49,7 +49,7 @@ public class ApplicationHandler extends HttpServlet {
         
         String applicationRegistered = applicationRegister.registerApplication(user);
         
-        if (choice == "Yes")
+        if (choice.equalsIgnoreCase("Yes"))
         {
             if(applicationRegistered.equals("SUCCESS"))
              {
